@@ -1,4 +1,4 @@
-package com.shreya.empmgmtsys;
+package com.shreya.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,56 +1,71 @@
 package com.shreya.entity;
 
+
 public class Employee {
 
-    private int id;
+    private int id; 
     private String name;
     private String address;
     private String email;
-    private String phno;
+    private int phno;  
     private int salary;
 
-    public Employee(){
+    public Employee() {
         super();
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
-    public void setId(int id){
+    
+    public void setId(int id) {
         this.id = id;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public void setName(String name){
+    
+    public void setName(String name) {
         this.name = name;
     }
-    public String getAddress(){
+
+    public String getAddress() {
         return address;
     }
-    public void setAddress(String address){
+    
+    public void setAddress(String address) {
         this.address = address;
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    public void setEmail(String email){
+    
+    public void setEmail(String email) {
         this.email = email;
     }
-    public String getPhNo(){
+
+    // Fix the method name to match the variable name
+    public int getPhno() {
         return phno;
     }
-    public void setPhNo(String phno){
+    
+    public void setPhno(int phno) {
         this.phno = phno;
     }
-    public int getSalary(){
+
+    public int getSalary() {
         return salary;
     }
-    public void setSalary(int salary){
+    
+    public void setSalary(int salary) {
         this.salary = salary;
     }
+
     @Override
-    public String toString(){
-        return "Employee [id="+id+",name="+name+",address="+address+",email="+email+",phno="+phno+",salary="+salary+"]";
+    public String toString() {
+        return "Employee [id=" + id + ", name=" + name + ", address=" + address + 
+               ", email=" + email + ", phno=" + phno + ", salary=" + salary + "]";
     }
 }

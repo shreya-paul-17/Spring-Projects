@@ -26,5 +26,6 @@ public class EmpController {
     public String empRegister(@ModelAttribute Employee e){
         System.out.println(e);
         return "add_emp";
-    }
+    } 
 }
+
