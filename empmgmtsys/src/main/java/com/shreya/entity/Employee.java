@@ -1,5 +1,7 @@
 package com.shreya.entity;
 
+// import lombok.Data;
+// import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,16 +9,28 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+// @Data
 @Table(name = "EMP_SYSTEM")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @Column(name = "ID")
     private int id; 
+
+    // @Column(name = "NAME")
     private String name;
+
+    // @Column(name = "ADDRESS")
     private String address;
+
+    // @Column(name = "EMAIL")
     private String email;
-    private int phno;  
+
+    // @Column(name = "PHNO.")
+    private String phno;  
+
+    // @Column(name = "SALARY")
     private int salary;
 
     public Employee() {
@@ -56,11 +70,11 @@ public class Employee {
     }
 
     // Fix the method name to match the variable name
-    public int getPhno() {
+    public String getPhno() {
         return phno;
     }
     
-    public void setPhno(int phno) {
+    public void setPhno(String phno) {
         this.phno = phno;
     }
 

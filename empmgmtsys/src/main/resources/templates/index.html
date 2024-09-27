@@ -49,6 +49,14 @@
       </div>
     </nav>
 
+    <!-- Navbar -->
+
+    <div th:if="${session.msg}">
+      <div class="alert alert-success" role="alert" th:text="${session.msg}">
+      </div>
+      <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+    </div>
+
     <div class="container p-5">
       <table class="table table-striped">
         <thead class="bg-primary text-white">
