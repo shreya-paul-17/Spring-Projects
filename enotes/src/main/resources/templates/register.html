@@ -19,6 +19,7 @@
                         <h3>Register Page</h3>
                         <th:block th:if="${session.msg}">
                         <p class="fs-5 text-center text-success">[[${session.msg}]]</p>
+                        <th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
                         </th:block>
                     </div>
                     <div class="card-body">

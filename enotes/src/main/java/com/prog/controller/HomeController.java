@@ -44,9 +44,9 @@ public class HomeController {
                 session.setAttribute("msg", "Something went wrong"); 
             }
         }
-        return "register";
+        return "redirect:/register";
     }
-    @GetMapping("/login")
+    @GetMapping("/signin")
     public String login()
     {
         return "login";

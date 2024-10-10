@@ -2,9 +2,13 @@ package com.prog.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.prog.entity.User;
 import com.prog.repository.UserRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -24,5 +28,10 @@ public class UserServiceImpl implements UserService{
         return userRepo.existsByEmail(email);
     }
 
-    
+    public void removeSessionMessage()
+    {
+       HttpSession session =  ((ServletRequestAttributes) (RequestContextHolder.getRequestAttributes())).getRequest().getSession();
+       session.removeAttribute("msg"); 
+    }
+
 }
