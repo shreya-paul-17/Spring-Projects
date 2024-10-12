@@ -25,7 +25,9 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><i class="fa-solid fa-book p-1"></i>Enotes</a>
+        <a class="navbar-brand" href="/"
+          ><i class="fa-solid fa-book p-1"></i>Enotes</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -40,23 +42,51 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house p-1"></i>Home</a>
+              <a class="nav-link active" aria-current="page" href="/"
+                ><i class="fa-solid fa-house p-1"></i>Home</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="addNotes"><i class="fa-solid fa-plus p-1"></i>Add</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="viewNotes"><i class="fa-solid fa-list p-1"></i>View</a>
-            </li>
+
+            <th:block th:if="${user!=null}">
+              <li class="nav-item">
+                <a class="nav-link" href="/user/addNotes"
+                  ><i class="fa-solid fa-plus p-1"></i>Add</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/viewNotes"
+                  ><i class="fa-solid fa-list p-1"></i>View</a
+                >
+              </li>
+            </th:block>
           </ul>
 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a href="register" class="btn btn-sm btn-primary"><i class="fa-solid fa-user-plus p-2"></i>Register</a>
-            </li>
-            <li class="nav-item">
-              <a href="signin" class="btn btn-sm btn-primary ms-2 p-2"><i class="fa-solid fa-right-to-bracket p-1"></i>Login</a>
-            </li>
+            <th:block th:if="${user==null}">
+              <li class="nav-item">
+                <a href="register" class="btn btn-sm btn-primary"
+                  ><i class="fa-solid fa-user-plus p-2"></i>Register</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="signin" class="btn btn-sm btn-primary ms-2 p-2"
+                  ><i class="fa-solid fa-right-to-bracket p-1"></i>Login</a
+                >
+              </li>
+            </th:block>
+
+            <th:block th:if="${user!=null}">
+              <li class="nav-item">
+                <a href="#" class="btn btn-sm btn-primary"
+                  ><i class="fa-solid fa-user-plus p-2"></i>[[${user.name}]]</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/logout" class="btn btn-sm btn-primary ms-2 p-2"
+                  ><i class="fa-solid fa-right-to-bracket p-1"></i>Logout</a
+                >
+              </li>
+            </th:block>
           </ul>
         </div>
       </div>
